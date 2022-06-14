@@ -1,0 +1,48 @@
+{
+  "name": "bootstrap-npm-starter",
+  "version": "1.1.0",
+  "description": "Demo project for building a Bootstrap powered site via npm.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/twbs/bootstrap-npm-starter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/twbs/bootstrap-npm-starter/issues"
+  },
+  "homepage": "https://github.com/twbs/bootstrap-npm-starter#readme",
+  "scripts": {
+    "build": "npm run css",
+    "css-compile": "node-sass --include-path node_modules --output-style compressed --source-map true --source-map-contents true --precision 6 scss -o assets/css/",
+    "css-prefix": "postcss --replace assets/css/starter.css --use autoprefixer --map",
+    "css-purge": "purgecss --css assets/css/starter.css --content index.html --output assets/css/",
+    "css": "npm run css-compile && npm run css-prefix",
+    "server": "serve --listen 3000",
+    "watch": "nodemon -e html,scss -x \"npm run css\"",
+    "test": "npm run css"
+  },
+  "keywords": [
+    "bootstrap",
+    "sass",
+    "css",
+    "javascript",
+    "starter",
+    "template"
+  ],
+  "author": "mdo",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^4.5.0",
+    "jquery": "^3.5.1",
+    "popper.js": "1.16.1-lts"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.8.0",
+    "node-sass": "^4.14.1",
+    "nodemon": "^2.0.4",
+    "postcss-cli": "^7.1.1",
+    "purgecss": "^2.1.2",
+    "serve": "^11.3.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  }
+}
